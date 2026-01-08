@@ -1,0 +1,163 @@
+/* 
+   PROJECT WORK PW 17 - Sostenibilità d’impresa
+   Studente: Maria Vittoria Negroni Matr: 0312401267
+   Obiettivo: Design System per Amadori (Settore Primario)
+*/
+
+/* 1. DEFINIZIONE VARIABILI (CSS Custom Properties)
+   Permette una manutenzione centralizzata del design (Scalabilità).
+*/
+:root {
+    --amadori-green: #2d5a27;      /* Identità istituzionale */
+    --amadori-yellow: #f9b233;     /* Accento solare/agricolo */
+    --bg-light: #f9fbf9;           /* Sfondo ispirato alla natura */
+    --white: #ffffff;
+    --text-main: #2c3e50;
+    --text-muted: #546e7a;
+    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 2. RESET E IMPOSTAZIONI BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* 3. HEADER - Branding e Vision */
+header {
+    background: linear-gradient(135deg, var(--amadori-green) 0%, #1e3d1a 100%);
+    color: var(--white);
+    padding: 4rem 1rem;
+    text-align: center;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Design moderno e dinamico */
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+}
+
+/* 4. LAYOUT CONTAINER */
+.container {
+    max-width: 1100px;
+    margin: -2rem auto 4rem; /* Overlay sull'header per profondità */
+    padding: 0 20px;
+}
+
+/* 5. GRID DEI REPORT (Responsiveness Avanzata) 
+   Uso di CSS Grid con minmax per evitare l'uso eccessivo di media queries.
+*/
+.reports-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* 6. CARD REPORT - Component UI */
+.report-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(45, 90, 39, 0.1);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.report-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--amadori-green);
+}
+
+.report-card h3 {
+    color: var(--amadori-green);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.report-card h3::before {
+    content: "📄"; /* Icona decorativa via CSS */
+    margin-right: 10px;
+}
+
+.kpi-list {
+    list-style: none;
+    margin: 1.5rem 0;
+    flex-grow: 1; /* Spinge il bottone sempre in fondo */
+}
+
+.kpi-list li {
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95rem;
+}
+
+.kpi-list li::before {
+    content: "✓";
+    color: var(--amadori-green);
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* 7. CALL TO ACTION - Pulsante Download */
+.btn-download {
+    display: block;
+    background-color: var(--amadori-green);
+    color: var(--white);
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.btn-download:hover {
+    background-color: var(--white);
+    color: var(--amadori-green);
+    border-color: var(--amadori-green);
+}
+
+/* 8. FOOTER */
+footer {
+    text-align: center;
+    padding: 3rem;
+    background-color: #f1f1f1;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* 9. ACCESSIBILITÀ E OTTIMIZZAZIONE 
+   Garantisce che la pagina sia leggibile anche su schermi piccoli.
+*/
+@media (max-width: 768px) {
+    header {
+        padding: 3rem 1rem;
+        clip-path: none;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .container {
+        margin-top: 2rem;
+    }
+}
