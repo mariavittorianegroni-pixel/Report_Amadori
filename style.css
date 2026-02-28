@@ -1,24 +1,20 @@
-/* 
-   PROJECT WORK PW 17 - Sostenibilità d’impresa
-   Studente: Maria Vittoria Negroni Matr: 0312401267
-   Obiettivo: Design System per Amadori (Settore Primario)
-*/
+/* ==========================================================================
+   STYLE PER PROJECT WORK: SOSTENIBILITÀ AMADORI (VERSIONE OTTIMIZZATA)
+   Autore: Maria Vittoria Negroni
+   Target: Desktop, Tablet, Smartphone
+   ========================================================================== */
 
-/* 1. DEFINIZIONE VARIABILI (CSS Custom Properties)
-   Permette una manutenzione centralizzata del design (Scalabilità).
-*/
+/* 1. Reset e Variabili Globali */
 :root {
-    --amadori-green: #2d5a27;      /* Identità istituzionale */
-    --amadori-yellow: #f9b233;     /* Accento solare/agricolo */
-    --bg-light: #f9fbf9;           /* Sfondo ispirato alla natura */
+    --primary-green: #2d5a27;   /* Verde Amadori/Sostenibilità */
+    --accent-yellow: #f1b434;    /* Giallo istituzionale */
+    --light-bg: #f9fbf9;         /* Sfondo chiaro riposante */
+    --dark-text: #333333;
     --white: #ffffff;
-    --text-main: #2c3e50;
-    --text-muted: #546e7a;
-    --shadow-soft: 0 4px 15px rgba(0, 0, 0, 0.05);
-    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --shadow: 0 4px 15px rgba(0,0,0,0.08);
+    --transition: all 0.3s ease;
 }
 
-/* 2. RESET E IMPOSTAZIONI BASE */
 * {
     margin: 0;
     padding: 0;
@@ -26,138 +22,188 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background-color: var(--bg-light);
-    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-bg);
+    -webkit-font-smoothing: antialiased;
 }
 
-/* 3. HEADER - Branding e Vision */
-header {
-    background: linear-gradient(135deg, var(--amadori-green) 0%, #1e3d1a 100%);
-    color: var(--white);
-    padding: 4rem 1rem;
-    text-align: center;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); /* Design moderno e dinamico */
-}
-
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    letter-spacing: -1px;
-}
-
-/* 4. LAYOUT CONTAINER */
 .container {
-    max-width: 1100px;
-    margin: -2rem auto 4rem; /* Overlay sull'header per profondità */
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
-/* 5. GRID DEI REPORT (Responsiveness Avanzata) 
-   Uso di CSS Grid con minmax per evitare l'uso eccessivo di media queries.
-*/
-.reports-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+/* 2. Header con Titoli Fluidi */
+header {
+    background: linear-gradient(135deg, var(--primary-green) 0%, #1e3d1a 100%);
+    color: var(--white);
+    padding: clamp(40px, 8vw, 80px) 0; /* Padding dinamico */
+    text-align: center;
+    border-bottom: 6px solid var(--accent-yellow);
 }
 
-/* 6. CARD REPORT - Component UI */
-.report-card {
+header h1 {
+    font-size: clamp(1.8rem, 5vw, 2.8rem); /* Si adatta alla grandezza schermo */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+header p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    opacity: 0.9;
+}
+
+/* 3. Sezioni e Tipografia */
+section {
+    padding: 50px 0;
+}
+
+h2 {
+    color: var(--primary-green);
+    margin-bottom: 30px;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    border-left: 6px solid var(--accent-yellow);
+    padding-left: 20px;
+}
+
+.section-desc {
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.separator {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 20px 0;
+}
+
+/* 4. Griglia Card (Mission) - Responsive via Grid */
+.highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
     background: var(--white);
-    border-radius: 16px;
-    padding: 2rem;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(45, 90, 39, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 4px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-top: 4px solid var(--primary-green);
+}
+
+.card h3 {
+    color: var(--primary-green);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+/* 5. Area Download Report - Flexbox ottimizzato */
+.report-grid {
     display: flex;
     flex-direction: column;
+    gap: 20px;
+}
+
+.report-item {
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
     transition: var(--transition);
 }
 
-.report-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-    border-color: var(--amadori-green);
+.report-item:hover {
+    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
 
-.report-card h3 {
-    color: var(--amadori-green);
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
+.report-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
 }
 
-.report-card h3::before {
-    content: "📄"; /* Icona decorativa via CSS */
-    margin-right: 10px;
-}
-
-.kpi-list {
-    list-style: none;
-    margin: 1.5rem 0;
-    flex-grow: 1; /* Spinge il bottone sempre in fondo */
-}
-
-.kpi-list li {
-    padding: 8px 0;
-    border-bottom: 1px dashed #eee;
+.report-info p {
+    color: #666;
     font-size: 0.95rem;
 }
 
-.kpi-list li::before {
-    content: "✓";
-    color: var(--amadori-green);
-    font-weight: bold;
-    margin-right: 8px;
-}
-
-/* 7. CALL TO ACTION - Pulsante Download */
+/* 6. Pulsante Download Professionale */
 .btn-download {
-    display: block;
-    background-color: var(--amadori-green);
+    background-color: var(--primary-green);
     color: var(--white);
-    text-align: center;
-    padding: 1rem;
-    border-radius: 8px;
     text-decoration: none;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
     transition: var(--transition);
-    border: 2px solid transparent;
+    border: 2px solid var(--primary-green);
+    white-space: nowrap; /* Evita che il testo vada a capo nel bottone */
 }
 
 .btn-download:hover {
     background-color: var(--white);
-    color: var(--amadori-green);
-    border-color: var(--amadori-green);
+    color: var(--primary-green);
 }
 
-/* 8. FOOTER */
+/* 7. Footer */
 footer {
-    text-align: center;
-    padding: 3rem;
     background-color: #f1f1f1;
-    color: var(--text-muted);
-    font-size: 0.9rem;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 60px;
+    font-size: 0.95rem;
+    color: #555;
+    border-top: 1px solid #ddd;
 }
 
-/* 9. ACCESSIBILITÀ E OTTIMIZZAZIONE 
-   Garantisce che la pagina sia leggibile anche su schermi piccoli.
-*/
+footer a {
+    color: var(--primary-green);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* 8. Media Queries per Tablet e Mobile */
 @media (max-width: 768px) {
+    .report-item {
+        flex-direction: column; /* Incolonna gli elementi su schermi piccoli */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .report-info {
+        margin-bottom: 10px;
+    }
+
+    .btn-download {
+        width: 100%; /* Bottone a tutta larghezza su mobile */
+        display: block;
+    }
+}
+
+@media (max-width: 480px) {
     header {
-        padding: 3rem 1rem;
-        clip-path: none;
+        padding: 30px 0;
     }
     
-    header h1 {
-        font-size: 1.8rem;
-    }
-    
-    .container {
-        margin-top: 2rem;
+    section {
+        padding: 30px 0;
     }
 }
