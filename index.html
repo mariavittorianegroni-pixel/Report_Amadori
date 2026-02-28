@@ -3,176 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sostenibilità Amadori | Archivio Report 2022-2024</title>
-    <style>
-        /* CSS3 - Design System Ispirato alla Sostenibilità */
-        :root {
-            --primary-green: #2d5a27; /* Verde istituzionale Amadori */
-            --secondary-green: #e9f5e8;
-            --accent-yellow: #f9b233; /* Richiamo ai prodotti agricoli */
-            --text-dark: #333;
-            --light-grey: #f4f4f4;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            margin: 0;
-            padding: 0;
-            background-color: #fff;
-        }
-
-        header {
-            background-color: var(--primary-green);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .intro-section {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        /* Layout a Griglia per i Report - Responsive (Criterio: Avanzato) */
-        .reports-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .report-card {
-            background: var(--secondary-green);
-            border-radius: 12px;
-            padding: 1.5rem;
-            border: 1px solid #c8e6c9;
-            transition: transform 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .report-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .report-card h3 {
-            color: var(--primary-green);
-            margin-top: 0;
-            border-bottom: 2px solid var(--accent-yellow);
-            padding-bottom: 0.5rem;
-        }
-
-        .kpi-list {
-            font-size: 0.9rem;
-            margin: 1rem 0;
-            padding-left: 1.2rem;
-        }
-
-        /* Pulsante di Download Professionale */
-        .btn-download {
-            display: inline-block;
-            background-color: var(--primary-green);
-            color: white;
-            text-decoration: none;
-            padding: 0.8rem 1.2rem;
-            border-radius: 5px;
-            text-align: center;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn-download:hover {
-            background-color: #1e3d1a;
-        }
-
-        footer {
-            margin-top: 4rem;
-            padding: 2rem;
-            background: var(--light-grey);
-            text-align: center;
-            font-size: 0.85rem;
-        }
-
-        /* Media Query per Mobile */
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.5rem; }
-        }
-    </style>
+    <title>Sostenibilità Amadori | Project Work Maria Vittoria Negroni</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <h1>Amadori: Responsabilità Sociale d'Impresa</h1>
-        <p>Trasparenza e Sostenibilità nel Settore Primario</p>
+        <div class="container">
+            <h1>Amadori: Sostenibilità nel Settore Primario</h1>
+            <p>Innovazione e responsabilità, dal campo alla tavola.</p>
+        </div>
     </header>
 
-    <div class="container">
-        <section class="intro-section">
-            <h2>Archivio Report di Sostenibilità</h2>
-            <p>La filiera integrata Amadori si impegna quotidianamente per un futuro alimentare sostenibile. 
-            In questa pagina è possibile consultare i progressi ottenuti negli ultimi tre anni.</p>
+    <main class="container">
+        
+        <section id="mission" aria-labelledby="mission-title">
+            <h2 id="mission-title">Il nostro impegno per il domani</h2>
+            <p>
+                Amadori, leader nel settore agroalimentare italiano, mette la sostenibilità al centro della propria strategia. 
+                Dalla gestione responsabile della filiera integrata al benessere animale, ogni azione è volta a ridurre l'impatto ambientale 
+                e a promuovere uno sviluppo economico circolare.
+            </p>
+            
+            <div class="highlights">
+                <article class="card">
+                    <h3>Ambiente</h3>
+                    <p>Riduzione delle emissioni di CO2 e utilizzo di energie rinnovabili nei siti produttivi.</p>
+                </article>
+                <article class="card">
+                    <h3>Filiera</h3>
+                    <p>Controllo totale e tracciabilità nel settore primario per garantire qualità e sicurezza.</p>
+                </article>
+                <article class="card">
+                    <h3>Sociale</h3>
+                    <p>Sostegno alle comunità locali e valorizzazione del capitale umano.</p>
+                </article>
+            </div>
         </section>
 
-        <main class="reports-grid">
+        <hr class="separator">
+
+        <section id="downloads" aria-labelledby="download-title">
+            <h2 id="download-title">Report di Sostenibilità</h2>
+            <p class="section-desc">Consulta e scarica i documenti ufficiali relativi alle performance ESG (Environmental, Social, Governance) degli ultimi anni.</p>
             
-            <!-- Report 2024 -->
-            <article class="report-card">
-                <div>
-                    <h3>Report 2024</h3>
-                    <p>Focus: Transizione energetica e Carbon Footprint.</p>
-                    <ul class="kpi-list">
-                        <li>Riduzione emissioni CO2 del 5%</li>
-                        <li>100% packaging riciclabile</li>
-                        <li>Nuovi standard benessere animale</li>
-                    </ul>
+            <div class="report-grid">
+                <div class="report-item">
+                    <div class="report-info">
+                        <h3>Bilancio di Sostenibilità 2024</h3>
+                        <p>Analisi delle performance e obiettivi raggiunti nell'ultimo anno solare.</p>
+                    </div>
+                    <a href="https://www.amadori.it/hubfs/Amadori%202022/Report_Sostenibilit%C3%A0/Ama_report_sost_2024_sin.pdf?hsLang=it" 
+                       class="btn-download" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Scarica il PDF del Bilancio di Sostenibilità 2024"
+                       download>Scarica PDF 2024</a>
                 </div>
-                <a href="https://www.amadori.it/hubfs/Amadori%202022/Report_Sostenibilit%C3%A0/Ama_report_sost_2024_sin.pdf?hsLang=it" target="_blank" class="btn-download" download>Scarica Report 2024 (PDF)</a>
-            </article>
 
-            <!-- Report 2023 -->
-            <article class="report-card">
-                <div>
-                    <h3>Report 2023</h3>
-                    <p>Focus: Gestione idrica e economia circolare.</p>
-                    <ul class="kpi-list">
-                        <li>-10% consumo acqua in stabilimento</li>
-                        <li>Recupero scarti di lavorazione</li>
-                        <li>Certificazioni di filiera NO-OGM</li>
-                    </ul>
+                <div class="report-item">
+                    <div class="report-info">
+                        <h3>Bilancio di Sostenibilità 2023</h3>
+                        <p>Dettaglio sulla transizione energetica e gestione delle risorse idriche.</p>
+                    </div>
+                    <a href="https://www.amadori.it/hubfs/Amadori%202022/Report_Sostenibilit%C3%A0/Ama_report_sost_2023.pdf?hsLang=it" 
+                       class="btn-download" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Scarica il PDF del Bilancio di Sostenibilità 2023"
+                       download>Scarica PDF 2023</a>
                 </div>
-                <a href="https://www.amadori.it/hubfs/Amadori%202022/Report_Sostenibilit%C3%A0/Ama_report_sost_2023.pdf?hsLang=it" target="_blank" class="btn-download" download>Scarica Report 2023 (PDF)</a>
-            </article>
 
-            <!-- Report 2022 -->
-            <article class="report-card">
-                <div>
-                    <h3>Report 2022</h3>
-                    <p>Focus: Innovazione tecnologica e sociale.</p>
-                    <ul class="kpi-list">
-                        <li>Digitalizzazione tracciabilità</li>
-                        <li>Formazione dipendenti sulla sicurezza</li>
-                        <li>Investimenti in agricoltura 4.0</li>
-                    </ul>
+                <div class="report-item">
+                    <div class="report-info">
+                        <h3>Bilancio di Sostenibilità 2022</h3>
+                        <p>Documento relativo all'avvio dei principali progetti di economia circolare.</p>
+                    </div>
+                    <a href="https://www.amadori.it/hubfs/Amadori%202022/Report%20Sostenibilit%C3%A0/Amadori_report_sost_2022.pdf?hsLang=it" 
+                       class="btn-download" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       aria-label="Scarica il PDF del Bilancio di Sostenibilità 2022"
+                       download>Scarica PDF 2022</a>
                 </div>
-                <a href="https://www.amadori.it/hubfs/Amadori%202022/Report%20Sostenibilit%C3%A0/Amadori_report_sost_2022.pdf?hsLang=it" target="_blank" class="btn-download" download>Scarica Report 2022 (PDF)</a>
-            </article>
+            </div>
+        </section>
 
-        </main>
-    </div>
+    </main>
 
-    <footer>
-        <p>Progetto realizzato da Maria Vittoria Negroni Matr: 0312401267 per il Project Work PW 17 - L-31 Informatica per le Aziende Digitali</p>
-        <p>&copy; 2026 - Analisi basata su dati pubblici Amadori S.p.A.</p>
+<footer>
+        <div class="container">
+            <p>&copy; 2026 - Project Work di Maria Vittoria Negroni</p>
+            <p>
+                Visualizza il <a href="https://mariavittorianegroni-pixel.github.io/Report_Amadori/" target="_blank" rel="noopener noreferrer">sito</a> | 
+                Codice su <a href="https://github.com/mariavittorianegroni-pixel/Report_Amadori" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </p>
+        </div>
     </footer>
 
 </body>
